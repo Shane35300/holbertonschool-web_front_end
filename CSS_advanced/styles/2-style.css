@@ -1,0 +1,27 @@
+html {
+	scroll-behavior: smooth;
+}
+/* Pour le corps (body), définissez la couleur du texte (foreground color) sur #161616 */
+body {
+    color: #161616;
+}
+
+/* Pour tous les éléments ancrés (balises <a>), définissez la couleur du texte sur #161616 */
+a {
+    color: #161616;
+}
+
+/* Pour tous les éléments ayant la classe "visually-hidden", définissez leur propriété "display" sur "none" */
+.visually-hidden {
+    display: none;
+}
+
+/* Pour tous les éléments ayant la classe "card-category", définissez la couleur du texte sur #D73953 */
+.card-category {
+    color: #D73953;
+}
+
+/* Pour tous les éléments ayant la classe "section-tagline", définissez la couleur du texte sur #D73953 */
+.section-tagline {
+    color: #D73953;
+}
