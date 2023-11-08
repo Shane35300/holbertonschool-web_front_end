@@ -24,7 +24,7 @@ html {
 	--section-header-align: center;
 	--section-tagline-transform: uppercase;
 	--section-title-margin: 0;
-	--section-title-color: color-black;
+	--section-title-color: var(--color-black);
 }
 
 /* Pour le corps (body), définissez la couleur du texte (foreground color) sur #161616 */
