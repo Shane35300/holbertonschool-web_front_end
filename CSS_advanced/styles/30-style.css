@@ -323,3 +323,52 @@ ul.row {
 	top: var(--header-logo-link-top);
 	left: var(--header-logo-link-left);
 }
+
+.card-work .card-outer {
+	position: relative;
+	overflow: hidden;
+}
+
+.card-work .card-image img {
+	height: 30rem;
+	width: 100%;
+	--object-fit: cover;
+	position: absolute;
+	bottom: 0;
+}
+
+.card-work .card-inner {
+	position: absolute;
+	top: -0.1rem;
+	left: -0.1rem;
+	right: -0.1rem;
+	z-index: 1;
+}
+
+.card-work:hover .card-inner {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.card-work .card-title {
+	text-align: center;
+	margin: 0;
+	opacity: 0;
+	height: 100%;
+	position: relative;
+}
+
+.card-title, .card-work a {
+	display: block;
+	text-decoration: none;
+	padding-top: 45%;
+}
+
+.card-title, .card-work a::after {
+	position: absolute;
+	position: 0;
+	content: "";
+}
+
+.card-work:hover .card-title {
+	opacity: 1;
+}
