@@ -1,0 +1,15 @@
+/* Sass file that assigns: Margin left and right at 10px to body tags Margin left and right at 15px to div tags */
+@mixin bodytag-mix {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+@mixin divtag-mix {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+body {
+	@include bodytag-mix;
+}
+div {
+	@include divtag-mix;
+}
