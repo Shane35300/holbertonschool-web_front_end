@@ -569,7 +569,7 @@
     padding-bottom: 1rem;
     border-bottom: 0.2rem solid var(--color-light-grey);
   }
-  .post-meta-list [class^="post-meta-"] :last-child {
+  .post-meta-list [class^="post-meta-"]:last-child {
     border: none;
     margin-bottom: 3rem;
   }
@@ -585,6 +585,6 @@
   .tag-list li::after {
     content: ", ";
   }
-  .tag-list li :last-child::after {
+  .tag-list li:last-child::after {
     content: "";
   }
