@@ -236,7 +236,7 @@
       flex-direction: column;
       margin: 0;
     }
-    [class^="clo-"] {
+    [class^="col-"] {
       margin: 0 0 3rem 0;
     }
     .col-1-3,
