@@ -1,0 +1,35 @@
+.btn-outline-primary {
+	border-color: #E0003C;
+	color: #E0003C;
+}
+.btn-primary {
+	background-color: #E0003C;
+	border-color: #BC1340;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+	background-color: #BC1340;
+}
+.d-flex.border-bottom {
+	border-color: #E0003C !important;
+}
+.card-header {
+	border-color: #E0003C;
+	background-color: #E0003C;
+	border-top-left-radius: 1rem !important;
+	border-top-right-radius: 1rem !important;
+}
+.card.mb-4.box-shadow {
+	border-color: #BC1340;
+	border-radius: 1rem;
+}
+a {
+	color: #E0003C !important;
+}
+.text-muted {
+	color: #8C8C8C;
+}
+h4 {
+	color: white;
+}
