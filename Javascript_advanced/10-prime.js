@@ -21,8 +21,6 @@ for (let i = 0; i < 100 ; i++) {
 		countPrimeNumbers();
 	});
 }
-setTimeout(() => {
-	let end = performance.now();
-	let time = end - start;
-	console.log(`Execution time of printing countPrimeNumbers was ${time} milliseconds.`)
-}, 0);
+let end = performance.now();
+let time = end - start;
+console.log(`Execution time of printing countPrimeNumbers was ${time} milliseconds.`)
