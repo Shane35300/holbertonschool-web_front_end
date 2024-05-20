@@ -32,7 +32,21 @@
 				table.append(tr1, tr2, tr3, tr4);
 				$('body').append(table);
 			}
+			function replaceFamilyTree() {
+				const newTable = `
+					<tr>
+						<th>Firstname</th>
+						<th>Lastname</th>
+					</tr>
+					<tr>
+						<td>Gerard</td>
+						<td>Bonissa</td>
+					</tr>
+					`;
+				$('table').html(newTable);
+			}
 			createFamilyTree();
+			replaceFamilyTree();
 		});
 	</script>
 </head>
