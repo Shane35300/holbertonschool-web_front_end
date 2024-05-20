@@ -11,6 +11,8 @@
 		$(document).ready(function () {
 			function createFamilyTree() {
 				const table = $('<table></table>');
+				const thead = $('<thead></thead>');
+				const tbody = $('<tbody></tbody>');
 				const tr1 = $('<tr></tr>');
 				const tr2 = $('<tr></tr>');
 				const tr3 = $('<tr></tr>');
@@ -26,10 +28,12 @@
 				tdPau.text('Paulette');
 				tdAnt.text('Antoine');
 				tr1.append(th1, th2);
+				thead.append(tr1);
 				tr2.append(tdGui, $('<td></td>').text('Salva'));
 				tr3.append(tdPau, $('<td></td>').text('Salva'));
 				tr4.append(tdAnt, $('<td></td>').text('Salva'));
-				table.append(tr1, tr2, tr3, tr4);
+				tbody.append(tr2, tr3, tr4);
+				table.append(thead, tbody);
 				$('body').append(table);
 			}
 			createFamilyTree();
