@@ -31,14 +31,22 @@
 				}
 			}
 			function createForm() {
-				
+				const input1 = $('<input type="text">');
+				const input2 = $('<input type="text">');
+				const inputSubmit = $('<input type="submit" value="Submit">');
+				const select = $('<select><option value="before">Before</option><option value="after">After</option></select>');
+				inputSubmit.click(function(event) {
+					event.preventDefault();
+					const value1 = $('input').first().val();
+					const value2 = $('input:nth-of-type(2)').val();
+					const position = $('select').val();
+					addNewMember(value1, value2, position);
+				});
+
+				$('table').before(input1, input2, select, inputSubmit);
 			}
 			createFamilyTree();
-			addNewMember('Guillaume', 'Salva');
-			addNewMember('Arielle', 'Salva');
-			addNewMember('Fanette', 'Snizt');
-			addNewMember('Gerard', 'Snizt');
-			addNewMember('Victor', 'Salva');
+			createForm();
 		});
 	</script>
 </head>
