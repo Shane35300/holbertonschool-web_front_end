@@ -8,8 +8,9 @@
 		function setCookies() {
 			const firstname = document.getElementById('firstname').value;
 			const email = document.getElementById('email').value;
-			document.cookie = "firstname=" + firstname;
-			document.cookie = "email=" + email;
+			const date = new Date(Date.now() + 10 * 24 * 60 * 60 * 1000);
+			document.cookie = "firstname=" + firstname + "; expires=" + date.toUTCString();
+			document.cookie = "email=" + email + "; expires=" + date.toUTCString();
 		}
 		function showCookies() {
 			const allCookies = document.cookie;
