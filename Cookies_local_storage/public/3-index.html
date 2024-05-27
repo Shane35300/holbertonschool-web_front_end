@@ -9,7 +9,7 @@
 			const firstname = document.getElementById('firstname').value;
 			const email = document.getElementById('email').value;
 			const date = new Date(Date.now() + 10 * 24 * 60 * 60 * 1000);
-			document.cookie = "firstname=" + firstname + "; expires=" + date.toUTCString();
+			document.cookie = "firstname=" + firstname + "; expires=" + date.toUTCString() + ";path=/;";
 			document.cookie = "email=" + email + "; expires=" + date.toUTCString();
 		}
 		function showCookies() {
@@ -32,18 +32,45 @@
 			return str;
 		}
 		function showForm() {
-			
+			document.getElementsByClassName('welcome')[0].remove();
+			document.getElementsByClassName('login')[0].style.display = 'block';
+		}
+		function hideForm() {
+			document.getElementsByClassName('login')[0].style.display = 'none';
+		}
+		function deleteCookiesAndShowForm() {
+			document.cookie = "firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+			document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+			showForm();
+		}
+		function showWelcomeMessageOrForm() {
+			const email = getCookie('email');
+			const firstname = getCookie('firstname');
+			if (email !== '' && firstname !== '') {
+				showForm();
+			} else {
+				hideForm();
+				const message = document.createElement('h1');
+				const link = document.createElement('a');
+				link.textContent = '(logout)';
+				link.style.fontWeight = 'normal';
+				link.style.fontStyle = 'italic';
+				link.style.marginLeft = '10px';
+
+				message.classList.add('welcome');
+				message.textContent = `Welcome ${firstname}`;
+				message.appendChild(link);
+			}
 		}
 	</script>
 </head>
 <body>
-	<h1>Login to the website</h1>
+
 	<div class="login">
+		<h1>Login to the website</h1>
 		<input type="text" id="firstname" placeholder="firstname">
 		<input type="text" id="email" placeholder="email">
 		<button onclick="setCookies()">Log me in</button>
 	</div>
-	<h1>Cookies</h1>
-	<button onclick="showCookies()">Show the cookies</button>
 </body>
 </html>
