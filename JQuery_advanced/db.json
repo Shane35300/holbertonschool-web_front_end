@@ -1,31 +1,5 @@
 {
-  "posts": [
-    {
-      "title": "f",
-      "author": "f",
-      "id": "4"
-    },
-    {
-      "title": "",
-      "author": "",
-      "id": "7"
-    },
-    {
-      "title": "",
-      "author": "",
-      "id": "8"
-    },
-    {
-      "title": "",
-      "author": "",
-      "id": "9"
-    },
-    {
-      "title": "",
-      "author": "",
-      "id": "10"
-    }
-  ],
+  "posts": [],
   "comments": [
     {
       "id": "1",
