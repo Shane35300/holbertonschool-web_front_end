@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+	<script>
+		function setCookiesAndShowWelcomeMessage() {
+			const firstname = document.getElementById('firstname').value;
+			const email = document.getElementById('email').value;
+			Cookies.set('firstname', firstname, { expires: 10 });
+			Cookies.set('email', email, { expires: 10 });
+			showWelcomeMessageOrForm();
+		}
+		function showCookies() {
+			const allCookies = document.cookie;
+			const para = document.createElement('p');
+			para.textContent = `Email: ${Cookies.get('email')} - Firstname: ${Cookies.get('firstname')}`;
+			document.body.appendChild(para);
+		}
+		function showForm() {
+			document.getElementsByClassName('welcome')[0].remove();
+			document.getElementsByClassName('login')[0].style.display = 'block';
+		}
+		function hideForm() {
+			document.getElementsByClassName('login')[0].style.display = 'none';
+		}
+		function deleteCookiesAndShowForm() {
+			Cookies.remove('firstname');
+			Cookies.remove('email');
+			showForm();
+		}
+		function showWelcomeMessageOrForm() {
+			const email = Cookies.get('email');
+			const firstname = Cookies.get('firstname');
+			if (email === '' || firstname === '') {
+				showForm();
+			} else {
+				hideForm();
+				const message = document.createElement('h1');
+				const link = document.createElement('a');
+				link.textContent = '(logout)';
+				link.style.fontWeight = 'normal';
+				link.style.fontStyle = 'italic';
+				link.style.marginLeft = '10px';
+				link.onclick = function() {
+					deleteCookiesAndShowForm();
+				};
+				message.classList.add('welcome');
+				message.textContent = `Welcome: ${firstname}`;
+				message.appendChild(link);
+				document.body.appendChild(message);
+			}
+		}
+	</script>
+</head>
+<body>
+
+	<div class="login">
+		<h1>Login to the website</h1>
+		<input type="text" id="firstname" placeholder="firstname">
+		<input type="text" id="email" placeholder="email">
+		<button onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
+	</div>
+</body>
+</html>
