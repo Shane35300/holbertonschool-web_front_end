@@ -11,6 +11,7 @@
 			const date = new Date(Date.now() + 10 * 24 * 60 * 60 * 1000);
 			document.cookie = "firstname=" + firstname + "; expires=" + date.toUTCString() + ";path=/;";
 			document.cookie = "email=" + email + "; expires=" + date.toUTCString();
+			showWelcomeMessageOrForm();
 		}
 		function showCookies() {
 			const allCookies = document.cookie;
@@ -46,7 +47,7 @@
 		function showWelcomeMessageOrForm() {
 			const email = getCookie('email');
 			const firstname = getCookie('firstname');
-			if (email !== '' && firstname !== '') {
+			if (email === '' || firstname === '') {
 				showForm();
 			} else {
 				hideForm();
@@ -56,10 +57,13 @@
 				link.style.fontWeight = 'normal';
 				link.style.fontStyle = 'italic';
 				link.style.marginLeft = '10px';
-
+				link.onclick = function() {
+					deleteCookiesAndShowForm();
+				};
 				message.classList.add('welcome');
-				message.textContent = `Welcome ${firstname}`;
+				message.textContent = `Welcome: ${firstname}`;
 				message.appendChild(link);
+				document.body.appendChild(message);
 			}
 		}
 	</script>
