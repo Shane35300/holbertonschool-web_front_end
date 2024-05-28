@@ -9,7 +9,7 @@
 			const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
 
 			function addItemToCart(item) {
-				localStorage.setItem(item, true);
+				sessionStorage.setItem(item, true);
 			}
 			function createStore() {
 				const list = document.createElement('ul');
@@ -24,8 +24,8 @@
 				}
 			}
 			function displayCart() {
-				if (localStorage.length > 0) {
-					const nbOfItems = localStorage.length;
+				if (sessionStorage.length > 0) {
+					const nbOfItems = sessionStorage.length;
 					const para = document.createElement('p');
 					para.textContent = `You previously had ${nbOfItems} items in your cart`;
 					document.body.appendChild(para);
