@@ -30,12 +30,7 @@
 			function removeItemfromCart(item) {
 				let cart = getCartFromStorage();
 				if (item in cart) {
-					if (cart[item] !== '1') {
-						const newValue = Number(cart[item]) - 1;
-						cart[item] = String(newValue);
-					} else {
-						delete cart[item];
-					}
+					delete cart[item];
 					sessionStorage.setItem('cart', JSON.stringify(cart));
 				}
 				displayCart();
@@ -101,6 +96,7 @@
 						li.textContent = `${key} x ${cart[key]}`;
 						li.appendChild(removeP);
 						removeP.style.display = 'inline';
+						removeP.style.marginLeft = '10px';
 						liste.appendChild(li);
 					}
 				}
